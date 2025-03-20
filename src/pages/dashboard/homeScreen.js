@@ -19,8 +19,7 @@ const WalletDashboard = () => {
   const [news, setNews] = useState(null);
   const [userId, setUserId] = useState(null);
   const [encryptedId, setencryptedId] = useState(null);
-  const [userId, setUserId] = useState(null);
-  const [encryptedId, setencryptedId] = useState(null);
+
   const [user, setUser] = useState(null);
   const [users, setUsers] = useState([]);
   const [balance, setBalance] = useState(null);
