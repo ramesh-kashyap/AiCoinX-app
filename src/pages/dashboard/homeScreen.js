@@ -18,6 +18,8 @@ const WalletDashboard = () => {
   const [activeTab, setActiveTab] = useState('tokens');
   const [coinData, setCoinData] = useState(null);
   const [news, setNews] = useState(null);
+  const [userId, setUserId] = useState(null);
+  const [encryptedId, setencryptedId] = useState(null);
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);
   const [encryptedId, setencryptedId] = useState(null);
@@ -79,8 +81,8 @@ const WalletDashboard = () => {
     setencryptedId(encrypted);
 
     // Optional: Refresh data every 10 seconds
-    const interval = setInterval(fetchData, 10000);
-    return () => clearInterval(interval);
+    // const interval = setInterval(fetchData, 10000);
+    // return () => clearInterval(interval);
   }, []);
 
   const fetchUsers = async () => {
