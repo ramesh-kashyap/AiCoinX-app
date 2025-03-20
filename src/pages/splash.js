@@ -53,7 +53,8 @@ function Splash() {
             <i className="ph-bold ph-caret-left"></i>
           </a>
           <div className="flex justify-center items-center w-full">
-            <h1 className="font-semibold text-2xl">AICOINX</h1>
+            {/* <h1 className="font-semibold text-2xl">AICOINX</h1> */}
+            <img src='assets/images/AiCoinX.png' style={{width:'50%'}}></img>
           </div>
         </div>
 
