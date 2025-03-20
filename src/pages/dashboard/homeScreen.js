@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FiPlusCircle, FiRepeat, FiSend, FiArrowDownLeft, FiUsers, FiCreditCard, FiBell, FiHome, FiUser, FiDownload, FiTrendingUp } from "react-icons/fi";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { FiPlusCircle, FiRepeat, FiSend, FiArrowDownLeft, FiUsers, FiCreditCard, FiBell, FiHome, FiUser, FiDownload, FiTrendingUp } from "react-icons/fi";
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Footer from '../components/footer';
 import Api from '../../service/Api';
 import WalletBalance from '../components/wallet';
@@ -20,6 +23,8 @@ const WalletDashboard = () => {
   const [news, setNews] = useState(null);
   const [userId, setUserId] = useState(null);
   const [encryptedId, setencryptedId] = useState(null);
+  const [userId, setUserId] = useState(null);
+  const [encryptedId, setencryptedId] = useState(null);
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);
   const [encryptedId, setencryptedId] = useState(null);
@@ -27,7 +32,43 @@ const WalletDashboard = () => {
   const [balance, setBalance] = useState(null);
   const [error, setError] = useState("");
   const [income, setIncome] = useState([]);
+  const [income, setIncome] = useState([]);
   const [liveData, setLiveData] = useState({ topGainers: [], topLosers: [] });
+  const fetchNewsData = async () => {
+    try {
+      // Fetch news data (adjust the endpoint as needed)
+      const newsResponse = await Api.get('/news');
+      if (newsResponse.data.status) {
+        setNews(newsResponse.data.data);
+        setUser(newsResponse.data.userData[0].fullname);
+        console.log('News data:', newsResponse.data.userData[0].fullname);
+      } else {
+        console.error('Failed to fetch balance:', newsResponse.data);
+      }
+
+    } catch (error) {
+      console.error('Error fetching news data:', error);
+    }
+  }
+  const fetchGetBalance = async () => {
+    try {
+      // Fetch news data (adjust the endpoint as needed)
+      const response = await Api.get('/getBalance');
+      if (response.data.status) {
+        setBalance(response.data.data.
+          available_balance);
+          setUserId(response.data.data.
+            userId);
+
+        console.log('Balance data:', response.data);
+      } else {
+        console.error('Failed to fetch balance:', response.data);
+      }
+
+    } catch (error) {
+      console.error('Error fetching news data:', error);
+    }
+  }
   const fetchNewsData = async () => {
     try {
       // Fetch news data (adjust the endpoint as needed)
@@ -76,11 +117,14 @@ const WalletDashboard = () => {
     };
     fetchGetBalance();
     // fetchData();
+    // fetchData();
     fetchNewsData();
     const encrypted = encryptID(userId);
     setencryptedId(encrypted);
 
     // Optional: Refresh data every 10 seconds
+    // const interval = setInterval(fetchData, 10000);
+    // return () => clearInterval(interval);
     // const interval = setInterval(fetchData, 10000);
     // return () => clearInterval(interval);
   }, []);
@@ -113,8 +157,13 @@ const WalletDashboard = () => {
       console.log('cehel', response.data.data);
       setIncome(response.data.data);
 
+      const response = await Api.get('/user-incomes');
+      console.log('cehel', response.data.data);
+      setIncome(response.data.data);
+
     } catch (err) {
       console.err("someting wrong");
+      setError(err.response?.data?.error || "Error fetching income");
       setError(err.response?.data?.error || "Error fetching income");
     }
   };
@@ -123,6 +172,7 @@ const WalletDashboard = () => {
   const styles = {
     container: {
       maxWidth: "430px",
+      minHeight: "600px",
       minHeight: "600px",
       margin: "auto",
       // background: "#fff",
@@ -257,19 +307,23 @@ const WalletDashboard = () => {
       color: "#101014",
     },
     span: {
+    span: {
       fontSize: "10px",
       fontWeight: "100",
       color: "#101014",
     },
     h1: {
       fontWeight: "800",
+      fontWeight: "800",
       fontSize: "30px",
     },
     h2: {
       color: "#222129",
       fontWeight: "800",
+      fontWeight: "800",
       fontSize: "20px",
     },
+    h3: {
     h3: {
       color: "#101014",
     }
@@ -286,8 +340,12 @@ const WalletDashboard = () => {
             <h2 style={styles.h2}>{user
               ? user.charAt(0).toUpperCase() + user.slice(1)
               : "Guest"}</h2>
+            <h2 style={styles.h2}>{user
+              ? user.charAt(0).toUpperCase() + user.slice(1)
+              : "Guest"}</h2>
           </div>
         </div>
+        <FiBell style={{ fontSize: "20px", color: "#101014", }} />
         <FiBell style={{ fontSize: "20px", color: "#101014", }} />
       </header>
 
@@ -298,6 +356,26 @@ const WalletDashboard = () => {
         {/* <span style={{marginRight:"50%"}}>Total Stake<span style={{color:"#ffd502",marginLeft:10}}>{parseFloat(income.totalInvestmentAmount).toFixed(2)}</span></span> */}
 
         <div style={styles.actionButtons}>
+          <div style={styles.actionItem}>
+            <button onClick={() => window.open(`http://localhost:4200`, '_blank')} style={styles.iconButton}><FiDownload style={{ color: "#000" }} /></button>
+            <p>Deposit</p>
+          </div>
+          <div style={styles.actionItem}>
+            <button onClick={() => window.open(`http://localhost:4200/stake?userId=${encryptedId}`, '_blank')}
+              style={styles.iconButton}><FiTrendingUp style={{ color: "#000" }} /></button>
+            <p>Stake</p>
+          </div>
+          <div style={styles.actionItem}>
+            <button onClick={() => navigate('/withdraw')} style={styles.iconButton}><FiArrowDownLeft style={{ color: "#000" }} /></button>
+            <p>Withdraw</p>
+          </div>
+          
+          
+          <div style={styles.actionItem}>
+            <button  onClick={() => window.open(`http://localhost:4200/sellToken`, '_blank')} style={styles.iconButton}><FiSend style={{ color: "#000" }} /></button>
+            <p>Swap</p>
+          </div>
+        </div>
           <div style={styles.actionItem}>
             <button onClick={() => window.open(`http://localhost:4200`, '_blank')} style={styles.iconButton}><FiDownload style={{ color: "#000" }} /></button>
             <p>Deposit</p>
@@ -384,6 +462,33 @@ const WalletDashboard = () => {
           </div>
         )}
       </div>
+              <span style={styles.received}>
+                {user.status === "Active" ? "Completed" : "Pending"}
+              </span>
+            </div>
+          ))
+        ) : (
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            // height: '100vh',
+            textAlign: 'center'
+          }}>
+            <img
+              src="/assets/images/empty_state.svg"
+              alt="empty"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                marginBottom: '20px'
+              }}
+            />
+            <p style={{ fontSize: '16px', color: '#000' }}>No users found.</p>
+          </div>
+        )}
+      </div>
 
       {/* Quick Actions */}
       {/* <div style={styles.quickActions}>
@@ -422,7 +527,27 @@ const WalletDashboard = () => {
           <p style={{ fontWeight: "bold", fontSize: "16px" }}>Invite Friends</p>
           <p style={{ fontSize: "12px", color: "#666" }}>Invite friends to join using our application</p>
         </div>
+      <div style={styles.quickActions}>
+        {/* Invite Friends Section */}
+        <div onClick={() => navigate('/security/refferals-user')} style={styles.actionCard}>
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}>
+            <img src="assets/images/jabru.png" alt="Friend 1" style={styles.avatar} />
+            <img src="assets/images/payal.png" alt="Friend 2" style={{ ...styles.avatar, marginLeft: "-10px" }} />
+            <img src="assets/images/rahul.png" alt="Friend 3" style={{ ...styles.avatar, marginLeft: "-10px" }} />
+          </div>
+          <p style={{ fontWeight: "bold", fontSize: "16px" }}>Invite Friends</p>
+          <p style={{ fontSize: "12px", color: "#666" }}>Invite friends to join using our application</p>
+        </div>
 
+        {/* Add Card Section */}
+        <div style={styles.actionCard}>
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}>
+            <img src="assets/images/card.png" alt="Card" style={{ borderRadius: "8px" }} />
+          </div>
+          <p style={{ fontWeight: "bold", fontSize: "16px" }}>Add Card</p>
+          <p style={{ fontSize: "12px", color: "#666" }}>Stake your AI CoinX tokens and earn passive rewards </p>
+        </div>
+      </div>
         {/* Add Card Section */}
         <div style={styles.actionCard}>
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}>
@@ -434,6 +559,7 @@ const WalletDashboard = () => {
       </div>
 
       {/* Bottom Navigation */}
+      <Footer />
       <Footer />
     </div>
   );
