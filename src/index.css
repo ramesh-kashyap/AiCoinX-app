@@ -25,3 +25,64 @@ select{
   background-position: initial;
   /* margin-bottom: 40px; */
 }
+/* .font-semibold {
+  font-weight: 600;
+} */
+.amigo-box-main {
+  background: linear-gradient(169deg, rgb(200, 128, 231) 0%, rgb(149 131 255) 100%);
+  display: flex
+;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.plus-box-text-main {
+  padding: 12px 0 12px 12px;
+}
+.amigo-pluse-text {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  font-family: inherit;
+}
+.unlock {
+  color: #fff;
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  font-family: inherit;
+}
+.upgrades-btn-main {
+  padding: 7px 8px;
+  background-color: #FFF;
+  border-radius: 8px;
+  color: #000;
+  margin-top: 16px;
+}
+.plus-robort-main {
+  height: 100%;
+  display: flex
+;
+}
+.plus-robort {
+  border-radius: 0 0 12px 0;
+  max-width: 100%;
+}
+.bg-n900 {
+  --tw-bg-opacity: 1;
+  background-color: #ffffff;
+  /* background-color: #101014; */
+}
+.after\:bg-n700::after {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgba(43, 49, 57, 1);
+  background-color: #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}

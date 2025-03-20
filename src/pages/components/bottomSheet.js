@@ -2,6 +2,8 @@ import zIndex from "@mui/material/styles/zIndex";
 import React , { useState,useEffect }from "react";
 import { FaCreditCard, FaArrowDown, FaExchangeAlt, FaArrowUp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+
+
 const BottomSheet = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
@@ -68,7 +70,7 @@ const BottomSheet = ({ isOpen, onClose }) => {
         <div style={styles.handle}></div>
 
         {/* Options */}
-        <Link to="/security/refferals-user"  style={styles.option}>
+        <Link  onClick={() => window.open(`http://localhost:4200/sellToken`, '_blank')}   style={styles.option}>
        
           <div style={styles.icon} >
           {/* <div className="flex justify-center items-center p-4 text-xl bg-white bg-opacity-5 rounded-full text-g300"> */}
@@ -101,13 +103,13 @@ const BottomSheet = ({ isOpen, onClose }) => {
           <span style={styles.arrow}>›</span>
         </Link>
 
-        <Link to="#" style={styles.option}>
+        <Link onClick={() => window.open(`http://localhost:4200`, '_blank')} style={styles.option}>
         <div style={styles.icon} >
           {/* <i className="fas fa-layer-group mr-2"></i> */}
           <i className="ph-fill ph-wallet"></i> 
           </div>
           <div>
-            <strong style={{color:"#101014"}}>Stake</strong>
+            <strong style={{color:"#101014"}}>Deposit</strong>
             <p style={{ margin: "0", fontSize: "12px", color: "#101014" }}>
             Lock tokens to earn rewards or interest.
             </p>

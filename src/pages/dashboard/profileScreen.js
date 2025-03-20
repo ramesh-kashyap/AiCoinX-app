@@ -252,7 +252,7 @@ function Account() {
         <div className="mt-6 space-y-3">
 
         <Link to="/security/refferals-user" >
-          <a style={{backgroundColor:"#D1C4E9", border :"1px solid rgb(0, 0, 0)",}} className="w-full flex justify-between items-center gap-6 bg-white bg-opacity-5 p-4 rounded-xl">
+          <a style={{backgroundColor:"rgb(255 255 255)", border :"1px solid rgb(0, 0, 0)",}} className="w-full flex justify-between items-center gap-6 bg-white bg-opacity-5 p-4 rounded-xl">
             <div className="flex justify-start items-center gap-3">
             <img alt="Referrals" className="w-12 h-12" style={{ borderRadius: "32px" }} src="\assets\images\Task.61fab7c74b5700a23bb5c33281136ac7.svg"/>
               <div>
@@ -268,7 +268,7 @@ function Account() {
   target="_blank" 
   rel="noopener noreferrer"
   
-  style={{ marginTop: "10px",backgroundColor:"#D1C4E9", border:"1px solid rgb(0, 0, 0)  " }} 
+  style={{ marginTop: "10px",backgroundColor:"rgb(255 255 255)", border:"1px solid rgb(0, 0, 0)  " }} 
   className="w-full flex justify-between items-center gap-6 bg-white bg-opacity-5 p-4 rounded-xl"
 >
   <div className="flex justify-start items-center gap-3">
@@ -286,7 +286,7 @@ function Account() {
           <p className="text-n70 font-semibold pb-5" style={styles.p}>Account</p>
           <div className="flex flex-col gap-5">
             
-            <Link to="/currency" style={{backgroundColor:"#D1C4E9", border:"1px solid rgb(0, 0, 0)"}}
+            <Link to="/currency" style={{backgroundColor:"rgb(255 255 255)", border:"1px solid rgb(0, 0, 0)"}}
               className="rounded-lg p-3 border border-white border-opacity-5 flex justify-between items-center  hover:bg-opacity-5 duration-300 group"
             >
               <div className="flex justify-start items-center gap-3">
@@ -325,7 +325,7 @@ function Account() {
  {/* Security Section */}
  <div className="pt-8">
           <p className="text-n70 font-semibold pb-5" style={styles.p}>Security</p>
-          <div className="flex flex-col gap-5" style={{backgroundColor:"#D1C4E9",borderRadius:"5px"}}>
+          <div className="flex flex-col gap-5" style={{backgroundColor:"rgb(255 255 255)",borderRadius:"5px"}}>
             <Link
               to="/security/change-password"
               className="rounded-lg p-3 border border-white border-opacity-5 flex justify-between items-center  hover:bg-opacity-5 duration-300 group" style={styles.border}
@@ -476,7 +476,7 @@ function Account() {
 const LinkBox = ({ url, icon, name }) => {
   return (
     <Link to={url} target="_blank" rel="noopener noreferrer"
-      className="flex justify-between items-center p-3  hover:bg-opacity-5 duration-300 group" style={{backgroundColor:"#D1C4E9", borderRadius:"5px", border:"1px solid rgb(0, 0, 0)", marginBottom: 5}}>
+      className="flex justify-between items-center p-3  hover:bg-opacity-5 duration-300 group" style={{backgroundColor:"rgb(255 255 255)", borderRadius:"5px", border:"1px solid rgb(0, 0, 0)", marginBottom: 5}}>
       <div className="flex items-center gap-3">
       <div className="bg-opacity-5 flex justify-center items-center rounded-full text-g301 text-xl 0  duration-300">
       <i className={`ph ${icon}`}></i>
@@ -492,7 +492,7 @@ const LinkBox = ({ url, icon, name }) => {
 const Linkbutton = ({ url, icon, name }) => {
   return (
     <Link to={url}
-      className="flex justify-between items-center p-3 hover:bg-opacity-5 duration-300 group" style={{backgroundColor:"#D1C4E9", borderRadius:"5px", border:"1px solid rgb(0, 0, 0)", marginBottom:5}}>
+      className="flex justify-between items-center p-3 hover:bg-opacity-5 duration-300 group" style={{backgroundColor:"rgb(255 255 255)", borderRadius:"5px", border:"1px solid rgb(0, 0, 0)", marginBottom:5}}>
       <div className="flex items-center gap-3">
       <div className=" bg-white bg-opacity-5 flex justify-center items-center rounded-full text-g301 text-xl 0  duration-300">
       <i className={`ph ${icon}`}></i>
