@@ -16,11 +16,9 @@ function Marketplace() {
 const fetchUsers = async () => {
     try {
       const response = await Api.get("/deposit-History");
-      console.log('response:',response);
+
       if (response.data && Array.isArray(response.data.data)) {
-        console.log('response2:',response.data.data);
         setUsers(response.data.data);
-        
       } else {
         setUsers([]);
       }
