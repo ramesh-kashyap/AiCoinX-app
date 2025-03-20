@@ -7,12 +7,20 @@ import WalletBalance from '../components/wallet';
 import AirdropCard from '../components/airDrop';
 import NewsCard from '../components/newsComponent';
 import { fontSize, minHeight } from "@mui/system";
+import { encryptID } from "../components/cryptoUtils";
+import AutoCarousel from "../components/AutoCarousel";
+import Marquee from "react-fast-marquee";
+import { Volume2 } from "lucide-react"; // Using Lucide React for the icon
+
+
 const WalletDashboard = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('tokens');
   const [coinData, setCoinData] = useState(null);
   const [news, setNews] = useState(null);
   const [user, setUser] = useState(null);
+  const [userId, setUserId] = useState(null);
+  const [encryptedId, setencryptedId] = useState(null);
   const [users, setUsers] = useState([]);
   const [balance, setBalance] = useState(null);
   const [error, setError] = useState("");
@@ -41,6 +49,9 @@ const WalletDashboard = () => {
       if (response.data.status) {
         setBalance(response.data.data.
           available_balance);
+          setUserId(response.data.data.
+            userId);
+
         console.log('Balance data:', response.data);
       } else {
         console.error('Failed to fetch balance:', response.data);
@@ -62,8 +73,11 @@ const WalletDashboard = () => {
       }
     };
     fetchGetBalance();
-    fetchData();
+    // fetchData();
     fetchNewsData();
+    const encrypted = encryptID(userId);
+    setencryptedId(encrypted);
+
     // Optional: Refresh data every 10 seconds
     const interval = setInterval(fetchData, 10000);
     return () => clearInterval(interval);
@@ -129,12 +143,16 @@ const WalletDashboard = () => {
       borderRadius: "50%",
     },
     balanceCard: {
-      background: "#222129",
-      color: "white",
-      padding: "20px",
-      borderRadius: "12px",
-      textAlign: "center",
-      marginTop: "15px",
+      background: "url('assets/images/referral-friend-bg2-88eb9f12.jpg')",
+    color: "white",
+    padding: "20px",
+    borderRadius: "12px",
+    textAlign: "center",
+    marginTop: "15px",
+    boxShadow: "rgba(68, 110, 253, 0.2) 5px 12px 14px",
+    backgroundPosition: "bottom",
+    backgroundSize: "revert-layer",
+    backgroundRepeat: "no-repeat"
     },
     actionButtons: {
       display: "flex",
@@ -276,31 +294,47 @@ const WalletDashboard = () => {
 
         <div style={styles.actionButtons}>
           <div style={styles.actionItem}>
-            <button onClick={() => navigate('/withdraw')} style={styles.iconButton}><FiDownload style={{ color: "#000" }} /></button>
+            <button onClick={() => window.open(`http://localhost:4200`, '_blank')} style={styles.iconButton}><FiDownload style={{ color: "#000" }} /></button>
             <p>Deposit</p>
           </div>
           <div style={styles.actionItem}>
-            <button onClick={() => navigate('/market')} style={styles.iconButton}><FiTrendingUp style={{ color: "#000" }} /></button>
-            <p>Withdraw</p>
-          </div>
-          <div style={styles.actionItem}>
-            <button onClick={() => navigate('/all/transaction')} style={styles.iconButton}><FiSend style={{ color: "#000" }} /></button>
+            <button onClick={() => window.open(`http://localhost:4200/stake?userId=${encryptedId}`, '_blank')}
+              style={styles.iconButton}><FiTrendingUp style={{ color: "#000" }} /></button>
             <p>Stake</p>
           </div>
           <div style={styles.actionItem}>
-            <button onClick={() => window.open('https://thirdparty.com/invest/swaps?userid=12&amount=12', '_blank')}
-              style={styles.iconButton}><FiArrowDownLeft style={{ color: "#000" }} /></button>
+            <button onClick={() => navigate('/withdraw')} style={styles.iconButton}><FiArrowDownLeft style={{ color: "#000" }} /></button>
+            <p>Withdraw</p>
+          </div>
+          
+          
+          <div style={styles.actionItem}>
+            <button  onClick={() => window.open(`http://localhost:4200/sellToken`, '_blank')} style={styles.iconButton}><FiSend style={{ color: "#000" }} /></button>
             <p>Swap</p>
           </div>
         </div>
 
       </div>
+        <br/>
+
+        <AutoCarousel/>
+
+        <div className="w-full bg-white shadow-md rounded-2xl p-2 flex items-center" style={{marginTop:'10px'}}>
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white">
+              <Volume2 size={20}  stroke="#9583ff"/>
+            </div>
+            <Marquee speed={50} gradient={false} className="ml-2 text-gray-800">
+              Contributions you will bring to our team and are committed to providing you with the resources and opportunities you need to thrive.
+              Together, we can achieve great things. Thank you for choosing to be a part of our journey.
+            </Marquee>
+          </div>
+
 
       {/* Transactions */}
-      <div style={styles.transactions} onClick={() => navigate('/all/transaction')}>
+      <div style={styles.transactions} >
         <h3 style={styles.h3}>
           Transactions
-          <span style={{ color: "#101014", cursor: "pointer", marginLeft: "60%" }}>See all</span>
+          <span onClick={() => navigate('/all/transaction')} style={{ color: "#101014", cursor: "pointer", marginLeft: "60%" }}>See all</span>
         </h3>
 
         {users.length > 0 ? (
@@ -319,7 +353,7 @@ const WalletDashboard = () => {
               </div>
 
               <span style={styles.received}>
-                {user.status === "Active" ? "Success" : "Pending"}
+                {user.status === "Active" ? "Completed" : "Pending"}
               </span>
             </div>
           ))

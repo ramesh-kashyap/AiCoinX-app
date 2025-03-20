@@ -20,6 +20,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { Toaster, toast } from "react-hot-toast";
+import QRCodeGenerator from "../components/QRCodeGenerator";
 export default function ReferralProgram() {
   const inputRef = useRef(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -173,7 +174,7 @@ useEffect(() => {
     >
       <Toaster />
       {/* Page Content */}
-      <div   style={{backgroundColor:"#EDE7F6", paddingBottom:"110px" }}  className="w-full max-w-md mx-auto p-5">
+      <div   style={{backgroundColor:"rgb(255 255 255)", paddingBottom:"110px" }}  className="w-full max-w-md mx-auto p-5">
         {/* Header */}
         <div className="flex justify-start items-center pb-8 mr-8">
           <Link to="/home" className="flex justify-center items-center p-2 rounded-full bg-g300 text-n900">
@@ -291,16 +292,21 @@ useEffect(() => {
         
 
         <div
-  style={{
-    background: "#D1C4E9",marginTop:"-3px"
-  }}
+style={{
+  backgroundImage: `url('/assets/images/referral-friend-bg2-88eb9f12.jpg')`,
+  backgroundPosition: "center top",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  marginTop: "-3px"
+}}
   className="bg-purple-700 p-5 rounded-lg mt-5 text-center"
 >
  
 
 
 
-  <img src="\assets\images\connected-world-concept-illustration_114360-3027-removebg-preview.png" alt="Referral" className="mx-auto mb-4 w-32 h-32" />
+  {/* <img src="\assets\images\connected-world-concept-illustration_114360-3027-removebg-preview.png" alt="Referral" className="mx-auto mb-4 w-32 h-32" /> */}
+       <QRCodeGenerator value={shareUrl} />
   
   <h2  className="text-lg font-bold">Invite friends and earn up to</h2>
 
@@ -328,7 +334,7 @@ useEffect(() => {
           </button>
           <Link to='/team-list'>
           <button   style={{ backgroundColor: "#f4f4f4",color:"#101014", marginTop: "16px",borderRadius:"30px", marginLeft: "5px",width: "45%" }} className="bg-black rounded-md px-5 py-2 text-white mt-3 w-full">
-            Team Lists
+            Team View
           </button>
           </Link>
         </div>

@@ -6,12 +6,15 @@ const WalletBalance = ({ balance }) => {
       display: "flex",
       alignItems: "center",
       gap: "15px",
-      backgroundColor: "#D1C4E9", // Light gray background
-      backgroundColor: "#D1C4E9", // Light gray background
+  
       padding: "15px",
       borderRadius: "12px",
       boxShadow: "0 2px 6px rgb(17 24 32)", // Subtle shadow
       maxWidth: "100%",
+      backgroundImage: "url('assets/images/referral-friend-bg2-88eb9f12.jpg')",
+      backgroundPosition: "bottom",
+      backgroundSize: "auto",
+      backgroundRepeat: "no-repeat"
      
     },
     icon: {
@@ -21,12 +24,12 @@ const WalletBalance = ({ balance }) => {
     balanceText: {
       fontSize: "20px",
       fontWeight: "bold",
-      color:"#101014",
+      color:"#fff",
       margin: "0",
     },
     description: {
       fontSize: "14px",
-      color: "#101014",
+      color: "#fff",
       margin: "0",
     },
   };

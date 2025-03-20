@@ -112,7 +112,8 @@ export default function Referral() {
           ))}   
         </ul>
         <div
-          class="flex justify-between items-center gap-4 bg-white3 bg-opacity-5 rounded-lg py-3 px-4"
+          class="flex justify-between items-center gap-4  bg-opacity-5 rounded-lg py-3 px-4" style={{ backgroundColor: "rgb(255 255 255)",
+            border: "1px solid #d5d5d5",}}
         >
           <input
             type="text"
@@ -122,7 +123,7 @@ export default function Referral() {
             class="outline-none bg-transparent w-full text-n70 placeholder:text-n70 text-sm"
           />
           <div class="">
-            <i class="ph ph-magnifying-glass text-g300 text-xl"></i>
+            <i class="ph ph-magnifying-glass text-black text-xl"></i>
           </div>
         </div>
 

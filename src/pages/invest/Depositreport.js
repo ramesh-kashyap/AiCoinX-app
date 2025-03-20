@@ -99,8 +99,8 @@ const TransactionHistory = () => {
     const amountColor = isWithdrawal ? "text-red-400" : "text-black"; 
 
     return (
-      <div key={index} className="homeTab pt-8 px-6">
-        <div className="pt-8">
+      <div key={index} className="homeTab pt-8 px-6" style={{boxShadow: "rgba(68, 110, 253, 0.2) 9px 6px 12px",borderRadius:'10px'}}>
+        <div className="pt-8" >
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-center border-b border-white border-opacity-5 pb-4">
               <div className="flex justify-start items-center gap-2">
@@ -109,7 +109,7 @@ const TransactionHistory = () => {
                   <i className={`ph ${isWithdrawal ? "ph-arrow-up" : "ph-arrow-down"}`}></i>
                 </div>
 
-                <p className={`font-semibold  ${amountColor} !important`}>
+                <p className={`font-semibold  ${amountColor} !important`} >
                   {amountSign}{user.amount} 
                 </p>
                 {/* <img alt="USDT icon" className=" ml-2 w-5 h-5 mr-1" height="30" width="20px" src="/assets/images/ok3d.png" /> */}
@@ -187,7 +187,8 @@ const TransactionHistory = () => {
 
 const styles = {
   box: {
-    backgroundColor: "#D1C4E9",
+    backgroundColor: "rgb(255 255 255)",
+    border: "1px solid #d5d5d5",
   },
 };
 
