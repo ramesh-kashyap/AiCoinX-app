@@ -73,6 +73,7 @@ const fetchGetBalance = async () => {  try {
 
       if (response.data && Array.isArray(response.data.data)) {
         setUsers(response.data.data);
+       
       } else {
         setUsers([]);
       }
@@ -85,6 +86,7 @@ const fetchGetBalance = async () => {  try {
   useEffect(() => {
     fetchUsers();
     fetchIncomes();
+   
   }, []);
 
   const fetchIncomes = async () => {
@@ -98,6 +100,7 @@ const fetchGetBalance = async () => {  try {
        setError(err.response?.data?.error || "Error fetching income");
     }
   };
+
   // Inline CSS styles
   const styles = {
     container: {
