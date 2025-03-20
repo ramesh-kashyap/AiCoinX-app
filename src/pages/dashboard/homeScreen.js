@@ -18,10 +18,6 @@ const WalletDashboard = () => {
   const [activeTab, setActiveTab] = useState('tokens');
   const [coinData, setCoinData] = useState(null);
   const [news, setNews] = useState(null);
-  const [userId, setUserId] = useState(null);
-  const [encryptedId, setencryptedId] = useState(null);
-  const [userId, setUserId] = useState(null);
-  const [encryptedId, setencryptedId] = useState(null);
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);
   const [encryptedId, setencryptedId] = useState(null);
@@ -30,41 +26,6 @@ const WalletDashboard = () => {
   const [error, setError] = useState("");
   const [income, setIncome] = useState([]);
   const [liveData, setLiveData] = useState({ topGainers: [], topLosers: [] });
-  const fetchNewsData = async () => {
-    try {
-      // Fetch news data (adjust the endpoint as needed)
-      const newsResponse = await Api.get('/news');
-      if (newsResponse.data.status) {
-        setNews(newsResponse.data.data);
-        setUser(newsResponse.data.userData[0].fullname);
-        console.log('News data:', newsResponse.data.userData[0].fullname);
-      } else {
-        console.error('Failed to fetch balance:', newsResponse.data);
-      }
-
-    } catch (error) {
-      console.error('Error fetching news data:', error);
-    }
-  }
-  const fetchGetBalance = async () => {
-    try {
-      // Fetch news data (adjust the endpoint as needed)
-      const response = await Api.get('/getBalance');
-      if (response.data.status) {
-        setBalance(response.data.data.
-          available_balance);
-          setUserId(response.data.data.
-            userId);
-
-        console.log('Balance data:', response.data);
-      } else {
-        console.error('Failed to fetch balance:', response.data);
-      }
-
-    } catch (error) {
-      console.error('Error fetching news data:', error);
-    }
-  }
   const fetchNewsData = async () => {
     try {
       // Fetch news data (adjust the endpoint as needed)
@@ -112,7 +73,7 @@ const WalletDashboard = () => {
       }
     };
     fetchGetBalance();
-    fetchData();
+    // fetchData();
     fetchNewsData();
     const encrypted = encryptID(userId);
     setencryptedId(encrypted);
@@ -128,7 +89,6 @@ const WalletDashboard = () => {
 
       if (response.data && Array.isArray(response.data.data)) {
         setUsers(response.data.data);
-       
       } else {
         setUsers([]);
       }
@@ -141,7 +101,6 @@ const WalletDashboard = () => {
   useEffect(() => {
     fetchUsers();
     fetchIncomes();
-   
   }, []);
 
   const fetchIncomes = async () => {
@@ -155,7 +114,6 @@ const WalletDashboard = () => {
       setError(err.response?.data?.error || "Error fetching income");
     }
   };
-
   // Inline CSS styles
   const styles = {
     container: {
@@ -355,26 +313,6 @@ const WalletDashboard = () => {
             <p>Swap</p>
           </div>
         </div>
-          <div style={styles.actionItem}>
-            <button onClick={() => window.open(`http://localhost:4200`, '_blank')} style={styles.iconButton}><FiDownload style={{ color: "#000" }} /></button>
-            <p>Deposit</p>
-          </div>
-          <div style={styles.actionItem}>
-            <button onClick={() => window.open(`http://localhost:4200/stake?userId=${encryptedId}`, '_blank')}
-              style={styles.iconButton}><FiTrendingUp style={{ color: "#000" }} /></button>
-            <p>Stake</p>
-          </div>
-          <div style={styles.actionItem}>
-            <button onClick={() => navigate('/withdraw')} style={styles.iconButton}><FiArrowDownLeft style={{ color: "#000" }} /></button>
-            <p>Withdraw</p>
-          </div>
-          
-          
-          <div style={styles.actionItem}>
-            <button  onClick={() => window.open(`http://localhost:4200/sellToken`, '_blank')} style={styles.iconButton}><FiSend style={{ color: "#000" }} /></button>
-            <p>Swap</p>
-          </div>
-        </div>
 
       </div>
         <br/>
@@ -414,33 +352,6 @@ const WalletDashboard = () => {
                 </span>
               </div>
 
-              <span style={styles.received}>
-                {user.status === "Active" ? "Completed" : "Pending"}
-              </span>
-            </div>
-          ))
-        ) : (
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            // height: '100vh',
-            textAlign: 'center'
-          }}>
-            <img
-              src="/assets/images/empty_state.svg"
-              alt="empty"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-                marginBottom: '20px'
-              }}
-            />
-            <p style={{ fontSize: '16px', color: '#000' }}>No users found.</p>
-          </div>
-        )}
-      </div>
               <span style={styles.received}>
                 {user.status === "Active" ? "Completed" : "Pending"}
               </span>

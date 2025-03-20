@@ -166,7 +166,7 @@ function Register() {
           color: #000;
         }
         .logo-icon {
-          width: 142px;
+          width: 35px;
           height: 44px;
           fill: none;
           stroke: #000;
@@ -362,9 +362,9 @@ function Register() {
         <header className="header">
           <div className="logo">
             <div className="logo-icon" >
-            <img src='assets/images/AiCoinX.png' ></img>
+            <img src="assets/images/ok3d.png" alt="ok3d"  style={{ maxWidth: "45px" }} />
             </div>
-         
+           AICOINX
           </div>
           <Link to='/login'>
           <button className="login-btn">Login</button>

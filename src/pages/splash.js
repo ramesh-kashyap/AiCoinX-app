@@ -7,21 +7,21 @@ function Splash() {
   const slides = [
     {
       img: "assets/images/onboarding-slider-img-1.png",
-      title: "Maximize Your Crypto with AiCoinX Staking",
+      title: "Top Web3 Crypto Solution Today",
       description:
-        "Earn rewards effortlessly by staking your assets securely on AiCoinX.",
+        "Discover the leading Web3 crypto solution for secure and efficient transactions.",
     },
     {
       img: "assets/images/onboarding-slider-img-2.png",
-      title: "Secure & Profitable Staking Made Easy",
+      title: "Premier Choice Crypto Web3 App",
       description:
-        "Enjoy high APY returns and safe staking options with top-tier security.",
+        "Explore our premier choice crypto web3 app for seamless transactions and security.",
     },
     {
       img: "assets/images/onboarding-slider-img-3.png",
-      title: "Start Earning Passive Income Today",
+      title: "Trending Crypto Made Simple Now",
       description:
-        "Stake your crypto and watch your portfolio grow with AiCoinX.",
+        "Experience streamlined crypto trading with our intuitive platform. Start trading effortlessly today!",
     },
   ];
 
@@ -53,8 +53,7 @@ function Splash() {
             <i className="ph-bold ph-caret-left"></i>
           </a>
           <div className="flex justify-center items-center w-full">
-            {/* <h1 className="font-semibold text-2xl">AICOINX</h1> */}
-            <img src='assets/images/AiCoinX.png' style={{width:'50%'}}></img>
+            <h1 className="font-semibold text-2xl">Splash</h1>
           </div>
         </div>
 
@@ -66,7 +65,7 @@ function Splash() {
             className="mx-auto"
           />
           <div className="pt-8">
-            <p className="text-3xl font-bold" style={{color:"#000"}}>
+            <p className="text-3xl font-bold">
               {slides[currentSlide].title}
             </p>
             <p className="text-n70 text-sm pt-5">

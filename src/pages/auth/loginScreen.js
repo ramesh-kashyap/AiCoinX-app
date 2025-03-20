@@ -63,7 +63,6 @@ const Login = () => {
             color : #000;
             font-size: 1rem;
             font-weight: bold;
-            width:142px;
           }
 
           .logo-dot {
@@ -212,7 +211,8 @@ const Login = () => {
 
       <div className="header relative z-20 ">
         <div className="logo">
-        <img src='assets/images/AiCoinX.png' ></img>
+          <img src="assets/images/ok3d.png" alt="ok3d"  style={{ maxWidth: "45px" }} />
+         AICOINX
         </div>
         <Link to='/register'>
         <button className="sign-up-button">Sign Up</button>
