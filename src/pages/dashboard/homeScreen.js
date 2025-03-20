@@ -89,6 +89,7 @@ const WalletDashboard = () => {
 
       if (response.data && Array.isArray(response.data.data)) {
         setUsers(response.data.data);
+       
       } else {
         setUsers([]);
       }
@@ -101,6 +102,7 @@ const WalletDashboard = () => {
   useEffect(() => {
     fetchUsers();
     fetchIncomes();
+   
   }, []);
 
   const fetchIncomes = async () => {
@@ -114,6 +116,7 @@ const WalletDashboard = () => {
       setError(err.response?.data?.error || "Error fetching income");
     }
   };
+
   // Inline CSS styles
   const styles = {
     container: {
