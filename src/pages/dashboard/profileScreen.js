@@ -13,7 +13,8 @@ function Account() {
   const [selectedButton, setSelectedButton] = useState("no");
   const navigate = useNavigate(); // Redirect function
    const [newEmail, setNewEmail] = useState(null); // User data store karne ke liye state
-     const [UserData, setUserData] = useState(null); // User data store karne ke liye state
+     const [UserData, setUserData] = useState(null);
+     const [name, setName] = useState(null); // User data store karne ke liye state
      const [user, setUser] = useState(null);
 
   const handleLogout = () => {
@@ -30,7 +31,7 @@ function Account() {
   
         if (response.data && response.data.userData) {
           setNewEmail(response.data.userData[0].email); 
-          setUserData(response.data.userData[0].fullname); 
+          setName(response.data.userData[0].fullname); 
 
         }
       } catch (error) {
@@ -96,13 +97,13 @@ function Account() {
       <h1 style={{marginTop:"18px"}} className="text-lg font-bold mb-4 text-center">
         Edit Username
       </h1>
-      <p style={{marginTop:"10px",marginBottom:"20px"}} className="text-gray-500 text-center mb-4">
+      <p style={{marginTop:"10px",marginBottom:"20px"}} className="text-black text-center mb-4">
         Please fill in the field to continue
       </p>
 
       <form className="flex flex-col gap-3">
         <div className="relative w-full">
-          <i style={{marginTop:"24px",marginLeft:"10px"}} className="ph ph-user absolute inset-y-0 left-3 flex items-center text-white text-lg"></i>
+          <i style={{marginTop:"24px",marginLeft:"10px"}} className="ph ph-user absolute inset-y-0 left-3 flex items-center text-black text-lg"></i>
 
           <input  
             style={{ 
@@ -217,7 +218,7 @@ function Account() {
       width="50"
     />
     <div>
-      <h2 className="text-lg font-bold">{UserData}</h2>
+      <h2 className="text-lg font-bold">{name}</h2>
       <p style={{ color: "rgba(87, 92, 97, 1)" }} className="text-gray-500">
         {newEmail}
       </p>

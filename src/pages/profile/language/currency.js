@@ -154,7 +154,7 @@ marginTop:"13px"
    </div>
 
    <form className="pt-8 flex flex-col gap-4 items-center w-full">
-  <div className="bg-gray-900 p-6 rounded-xl w-full max-w-md border border-gray-700">
+  <div className="bg-gray-900 p-6 rounded-xl w-full max-w-md border " style={{backgroundColor:'#fff'}}>
     {newName ? (
       [
         { label: "User name", value: UserData, icon: true },
@@ -166,7 +166,7 @@ marginTop:"13px"
         <div
           key={index}
           className={`py-3 flex justify-between items-center ${
-            index !== array.length - 1 ? "border-b border-gray-700" : "" // Last element par border remove
+            index !== array.length - 1 ? "border-b " : "" // Last element par border remove
           }`}
         >
           <div>

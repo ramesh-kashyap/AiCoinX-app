@@ -19,23 +19,17 @@ function Marketplace() {
 
 const fetchUsers = async () => {
     try {
-        const response = await Api.get("/deposit-History");
+      const response = await Api.get("/deposit-History");
 
-        if (response.data && Array.isArray(response.data.data)) {
-            setUsers(response.data.data);
-        } else {
-            setUsers([]); 
-        }
-
-        console.log(response.data);
-
-
-        console.log(response.data.data);
+      if (response.data && Array.isArray(response.data.data)) {
+        setUsers(response.data.data);
+      } else {
+        setUsers([]);
+      }
     } catch (err) {
-        setError(err.response?.data?.error || "Error fetching income");
+      setError(err.response?.data?.error || "Error fetching data");
     }
-};
-
+  };
 
 
 const fetchIncomes = async () => {
