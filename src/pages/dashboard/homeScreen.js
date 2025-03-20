@@ -269,8 +269,8 @@ const fetchGetBalance = async () => {  try {
       {/* Balance Card */}
       <div style={styles.balanceCard}>
         <p style={{textAlign:"left"}}>Your Balance</p>
-        <h1 style={{fontWeight:"800",fontSize: "30px",textAlign:"left", color:"#fff"}}>{balance}</h1>
-        <span style={{marginRight:"50%"}}>Total Stake<span style={{color:"#ffd502",marginLeft:10}}>{parseFloat(income.totalInvestmentAmount).toFixed(2)}</span></span>
+        <h1 style={{fontWeight:"800",fontSize: "30px",textAlign:"left", color:"#fff"}}>{parseFloat(balance).toFixed(2)}</h1>
+        {/* <span style={{marginRight:"50%"}}>Total Stake<span style={{color:"#ffd502",marginLeft:10}}>{parseFloat(income.totalInvestmentAmount).toFixed(2)}</span></span> */}
 
         <div style={styles.actionButtons}>
   <div style={styles.actionItem}>
@@ -312,7 +312,7 @@ const fetchGetBalance = async () => {  try {
             <div>
               {/* <p style={styles.p}>{user.remark}</p> */}
               <span style={styles.p}>
-                ${parseFloat(user.amount || 0).toFixed(2)}
+                {parseFloat(user.amount || 0).toFixed(2)}
               </span>
             </div>
 

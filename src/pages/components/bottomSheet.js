@@ -115,7 +115,7 @@ const BottomSheet = ({ isOpen, onClose }) => {
           <span style={styles.arrow}>›</span>
         </Link>
 
-        <Link to="/invest/Depositreport" style={styles.option}>
+        <Link to="/all/transaction" style={styles.option}>
         <div style={styles.icon} >
           {/* <i className="fas fa-history mr-2"></i> */}
           <i className="fas fa-history"></i>

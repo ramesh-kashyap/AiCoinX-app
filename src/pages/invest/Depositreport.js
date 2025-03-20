@@ -96,7 +96,7 @@ const TransactionHistory = () => {
   users.map((user, index) => {
     const isWithdrawal = user.remark?.toLowerCase().includes("withdraw");
     const amountSign = isWithdrawal ? "-" : "+";
-    const amountColor = isWithdrawal ? "text-red-400" : ""; 
+    const amountColor = isWithdrawal ? "text-red-400" : "text-black"; 
 
     return (
       <div key={index} className="homeTab pt-8 px-6">
@@ -152,19 +152,19 @@ const TransactionHistory = () => {
           {totalPages > 1 && (
             <div className="flex justify-center items-center gap-4 mt-6">
               <button
-                className="px-4 py-2 bg-g301 text-white rounded-md"
+                className="px-4 py-2 bg-g301 text-black rounded-md"
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
               >
                 &lt;&lt;
               </button>
               
-              {currentPage > 2 && <span className="text-white">1, 2...</span>}
-              <span className="text-white bg-g301">{currentPage}</span>
-              {currentPage < totalPages - 1 && <span className="text-white">... {totalPages}</span>}
+              {currentPage > 2 && <span className="text-black">1, 2...</span>}
+              <span className="text-black bg-g301">{currentPage}</span>
+              {currentPage < totalPages - 1 && <span className="text-black">... {totalPages}</span>}
               
               <button
-                className="px-4 py-2 bg-g300 text-white rounded-md"
+                className="px-4 py-2 bg-g300 text-black rounded-md"
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
               >
