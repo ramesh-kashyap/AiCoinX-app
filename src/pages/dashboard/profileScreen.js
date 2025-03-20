@@ -16,6 +16,7 @@ function Account() {
      const [UserData, setUserData] = useState(null);
      const [name, setName] = useState(null); // User data store karne ke liye state
      const [user, setUser] = useState(null);
+     const [coin, setCoin] = useState(0);
 
   const handleLogout = () => {
     localStorage.removeItem("authToken"); // Token remove
@@ -38,7 +39,20 @@ function Account() {
         console.error("Error fetching user data:", error);
       }
     };
-  
+    const fetchTelegramCoin = async () => {
+      try {
+        const response = await Api.get("/get-telegram-coin"); // API call
+         console.log('response:',response);
+        if (response.data.status ) {
+          
+          setCoin(response.data.coin); 
+         
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+    fetchTelegramCoin();
     fetchUserData();
   }, []);
   
@@ -232,7 +246,7 @@ function Account() {
    </div>
    
     
-   <AirdropCard/>
+   <AirdropCard coin={coin} />
 
         {/* Account Card */}
         <div className="mt-6 space-y-3">

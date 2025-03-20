@@ -1,5 +1,5 @@
 import React from 'react';
-const AirdropCard = () => {
+const AirdropCard = ({ coin }) => {
   const styles = {
     container: {
       display: "flex",
@@ -68,7 +68,7 @@ const AirdropCard = () => {
         <div>
           <h2 style={styles.title}>Earn more AI CoinX!</h2>
           <p style={styles.points}>
-            <span style={styles.amount}>70,000.00</span>
+            <span style={styles.amount}>{coin??0}</span>
             <img
               src="assets/images/ok3d.png" // Replace with actual token logo
               alt="Klink Logo"
