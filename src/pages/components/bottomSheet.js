@@ -70,7 +70,7 @@ const BottomSheet = ({ isOpen, onClose }) => {
         <div style={styles.handle}></div>
 
         {/* Options */}
-        <Link  onClick={() => window.open(`http://localhost:4200/sellToken`, '_blank')}   style={styles.option}>
+        <Link  onClick={() => window.open(`https://stake.aivault.world/sellToken`, '_blank')}   style={styles.option}>
        
           <div style={styles.icon} >
           {/* <div className="flex justify-center items-center p-4 text-xl bg-white bg-opacity-5 rounded-full text-g300"> */}
@@ -103,7 +103,7 @@ const BottomSheet = ({ isOpen, onClose }) => {
           <span style={styles.arrow}>›</span>
         </Link>
 
-        <Link onClick={() => window.open(`http://localhost:4200`, '_blank')} style={styles.option}>
+        <Link onClick={() => window.open(`https://stake.aivault.world`, '_blank')} style={styles.option}>
         <div style={styles.icon} >
           {/* <i className="fas fa-layer-group mr-2"></i> */}
           <i className="ph-fill ph-wallet"></i> 

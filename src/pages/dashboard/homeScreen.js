@@ -6,7 +6,7 @@ import Api from '../../service/Api';
 import WalletBalance from '../components/wallet';
 import AirdropCard from '../components/airDrop';
 import NewsCard from '../components/newsComponent';
-import { fontSize, minHeight } from "@mui/system";
+import { border, fontSize, minHeight } from "@mui/system";
 import { encryptID } from "../components/cryptoUtils";
 import AutoCarousel from "../components/AutoCarousel";
 import Marquee from "react-fast-marquee";
@@ -144,6 +144,7 @@ const WalletDashboard = () => {
       width: "40px",
       height: "40px",
       borderRadius: "50%",
+      border:"1px solid #a192e8"
     },
     balanceCard: {
       background: "url('assets/images/referral-friend-bg2-88eb9f12.jpg')",
@@ -278,7 +279,7 @@ const WalletDashboard = () => {
       {/* User Info */}
       <header style={styles.header}>
         <div style={styles.profile}>
-          <img src="assets/images/jabru.png" alt="User Avatar" style={styles.avatar} />
+          <img src="\assets\images\userIcon.edc1c75ce595e5bb3b239b6d69ec9cf4.svg" alt="User Avatar" style={styles.avatar} />
           <div>
             <span style={styles.span}>Hello,</span>
             <h2 style={styles.h2}>{user

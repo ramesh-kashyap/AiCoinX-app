@@ -18,7 +18,7 @@ function Footer() {
                   bottom:'48px',
                   left:'45%',
                 }}>
-        <button onClick={() => setIsOpen(true)} className="bg-g300 text-2xl p-3.5 rounded-full flex justify-center items-center relative">
+        <button onClick={() => setIsOpen(true)} className="bg-g300 text-2xl p-3.5 rounded-full flex justify-center items-center relative text-white">
             <i className="ph ph-arrows-counter-clockwise"></i>
             <div className="absolute -bottom-2 -left-5 -right-5 -z-10">
               {/* <img src="/assets/images/reload-bg.png" alt="Reload" /> */}
