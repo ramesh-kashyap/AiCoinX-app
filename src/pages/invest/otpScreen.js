@@ -174,7 +174,7 @@ function Otp() {
 const styles = {
   container: {
     minHeight: "100vh",
-    backgroundColor: "rgb(17 22 27)",
+    backgroundColor: "#fff",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -190,12 +190,12 @@ const styles = {
     margin: 0,
     fontSize: "1.5rem",
     fontWeight: "bold",
-    color: "#fff",
+    color: "#000",
   },
   subtitle: {
     margin: "0.5rem 0 2rem 0",
     fontSize: "0.95rem",
-    color: "#fff",
+    color: "#000",
     textAlign: "center",
     maxWidth: "300px",
   },
@@ -211,7 +211,7 @@ const styles = {
     borderBottom: "2px solid #ccc",
     fontSize: "1.5rem",
     textAlign: "center",
-    color: "#fff",
+    color: "#000",
     lineHeight: "40px",
   },
   keypad: {
@@ -237,7 +237,7 @@ const styles = {
   },
   forgotPin: {
     marginTop: "auto",
-    color: "#6f49ed",
+    color: "#000",
     textDecoration: "none",
     fontWeight: "500",
   },

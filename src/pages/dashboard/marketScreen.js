@@ -218,6 +218,12 @@ const styles = {
     },
     h3:{
       color: "#101014",
+    },
+    backgroundStyle: {
+      backgroundImage: "url('assets/images/referral-friend-bg2-88eb9f12.jpg')",
+      backgroundPosition: "bottom",
+      backgroundSize: "auto",
+      backgroundRepeat: "no-repeat"
     }
   };
 

@@ -45,7 +45,7 @@ const Forget = () => {
             padding: 20px;
             max-width: 100%;
             min-height: 100vh;
-              background-color: #EDE7F6;
+              background-color: #fff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           }
 

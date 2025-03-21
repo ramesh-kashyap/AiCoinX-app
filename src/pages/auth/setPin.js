@@ -90,7 +90,7 @@ function SetPin() {
       <Toaster position="top-center" />
       <div className="container relative overflow-hidden justify-start items-start text-white">
         <div className="w-[582px] h-[582px] rounded-full bg-g300 absolute -top-48 -left-20 blur-[575px]"></div>
-        <div style={styles.container} className="bg-n900">
+        <div style={styles.container} >
           {/* Progress Bar with 3 segments */}
           <div style={styles.progressContainer}>
             <div style={styles.progressBar}>
@@ -181,7 +181,7 @@ function SetPin() {
 const styles = {
   container: {
     minHeight: "100vh",
-    backgroundColor: "rgb(17 22 27)",
+    backgroundColor: "#fff",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

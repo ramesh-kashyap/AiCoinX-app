@@ -141,14 +141,14 @@ function Register() {
              height: 130dvh;
           margin: 0 auto;
           padding: 1rem;
-           background-color:  #EDE7F6
+           background-color: #fff
         }
            @media only screen and (max-width: 600px) {.container {
           max-width: 480px;
              height: 130dvh;
           margin: 0 auto;
           padding: 1rem;
-           background-color:  #EDE7F6
+           background-color:  #ffffff
         }}
         /* Header */
         .header {

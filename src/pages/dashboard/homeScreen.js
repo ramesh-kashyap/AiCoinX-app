@@ -108,7 +108,7 @@ const WalletDashboard = () => {
   const fetchIncomes = async () => {
     try {
       const response = await Api.get('/user-incomes');
-      console.log('cehel', response.data.data);
+      
       setIncome(response.data.data);
 
     } catch (err) {
