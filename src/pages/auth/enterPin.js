@@ -169,7 +169,7 @@ const styles = {
     width: "18px",
     height: "18px",
     borderRadius: "50%",
-    backgroundColor: "#fff",
+    backgroundColor: "#9583ff",
   },
   keypad: {
     display: "grid",

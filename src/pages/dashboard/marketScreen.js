@@ -12,17 +12,15 @@ function Marketplace() {
   // ✅ Always start with an empty array
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    fetchUsers();
-    fetchIncomes();
-}, []);
-
+  
 const fetchUsers = async () => {
     try {
       const response = await Api.get("/deposit-History");
-
+      console.log('response:',response);
       if (response.data && Array.isArray(response.data.data)) {
+        console.log('response2:',response.data.data);
         setUsers(response.data.data);
+        
       } else {
         setUsers([]);
       }
@@ -44,6 +42,11 @@ const fetchIncomes = async () => {
   }
 };
 
+useEffect(() => {
+  fetchUsers();
+  fetchIncomes();
+  console.log('users:',users);
+}, []);
 
 
 
@@ -65,15 +68,164 @@ const formatDate = (dateString) => {
 };
 
 
-const styles = {
-  backgroundStyle: {
-    backgroundImage: "url('assets/images/referral-friend-bg2-88eb9f12.jpg')",
-    backgroundPosition: "bottom",
-    backgroundSize: "auto",
-    backgroundRepeat: "no-repeat"
-  }
-};
+console.log('users:',users);
 
+const styles = {
+    container: {
+      maxWidth: "430px",
+      minHeight:"600px",
+      margin: "auto",
+      // background: "#fff",
+      padding: "20px",
+      // borderRadius: "20px",
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+      fontFamily: "Arial, sans-serif",
+      marginBottom: "65px"
+    },
+    header: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    profile: {
+      display: "flex",
+      alignItems: "center",
+      gap: "10px",
+    },
+    avatar: {
+      width: "40px",
+      height: "40px",
+      borderRadius: "50%",
+    },
+    balanceCard: {
+      background: "#222129",      
+      color: "white",
+      padding: "20px",
+      borderRadius: "12px",
+      textAlign: "center",
+      marginTop: "15px",
+    },
+    actionButtons: {
+      display: "flex",
+      justifyContent: "space-between",
+      marginTop: "15px",
+      textAlign: "center",
+    },
+    actionItem: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "5px",
+    },
+    iconButton: {
+      background: "#D1C4E9",
+      border: "none",
+      width: "50px",
+      height: "50px",
+      borderRadius: "50%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+      fontSize: "20px",
+      cursor: "pointer",
+    },
+    button: {
+      background: "#6a5acd",
+      border: "none",
+      color: "white",
+      padding: "10px",
+      borderRadius: "50%",
+      display: "flex",
+      alignItems: "center",
+      gap: "5px",
+      fontSize: "14px",
+      cursor: "pointer",
+    },
+    transactions: {
+      marginTop: "20px",
+    },
+    transaction: {
+      // backgroundColor: "#d1c4e9",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      // background: "white",
+      padding: "12px",
+      borderRadius: "10px",
+      marginTop: "10px",
+      boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+    },
+    received: {
+      color: "green",
+      fontSize: "14px",
+      // fontWeight: "bold",
+    },
+    outgoing: {
+      color: "red",
+      fontWeight: "bold",
+    },
+    quickActions: {
+      display: "flex",
+      justifyContent: "space-between",
+      marginTop: "20px",
+    },
+    actionCard: {
+      background: "#D1C4E9",
+      padding: "15px",
+      borderRadius: "12px",
+      textAlign: "center",
+      flex: "1",
+      margin: "5px",
+    },
+    bottomNav: {
+      display: "flex",
+      justifyContent: "space-around",
+      padding: "10px",
+      background: "#101014",
+      borderRadius: "12px",
+      position: "fixed",
+      bottom: "20px",
+      width: "50%",
+      left: "50%",
+      transform: "translateX(-50%)",
+      boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+    },
+    navButton: {
+      background: "none",
+      border: "none",
+      fontSize: "20px",
+      cursor: "pointer",
+    },
+    p: {
+      fontSize: "14px",
+      margin: 0,
+      color: "#101014",
+    },
+    span:{
+      fontSize: "10px",
+      fontWeight: "100",
+      color: "#101014",
+    },
+    h1: {
+      fontWeight:"800",
+      fontSize: "30px",
+    },
+    h2: {
+      color: "#222129",
+      fontWeight:"800",
+      fontSize: "20px",
+    },
+    h3:{
+      color: "#101014",
+    },
+    backgroundStyle: {
+      backgroundImage: "url('assets/images/referral-friend-bg2-88eb9f12.jpg')",
+      backgroundPosition: "bottom",
+      backgroundSize: "auto",
+      backgroundRepeat: "no-repeat"
+    }
+  };
 
   return (
     <div style={{paddingBottom:"17rem"}} className="container bg-n900 relative overflow-hidden flex justify-start items-start text-white pb-36">
@@ -229,66 +381,54 @@ const styles = {
 
           </ul>
           <div className="pt-8">
-          {activeTab === 'tokens' && (
-            <div className="tab-content activeTab" id="tabOne_data">
+          
+            <div className="tab-content " >
               <div className="flex justify-between items-center">
                 <p className="text-xl font-semibold"></p>
                 {/* <p className="text-sm text-g300">View All</p> */}
               </div>
 
-              {users.length > 0 ? (
-  users.map((user, index) => {
-      <div key={index} className="homeTab pt-8 px-6">
-        <div className="pt-8">
-          <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-center border-b border-white border-opacity-5 pb-4">
-              <div className="flex justify-start items-center gap-2">
-  {/* Icon */}
-  <div className="text-g300 flex justify-center items-center p-2 rounded-full text-xl bg-white bg-opacity-5">
-    <i className="ph ph-arrow-down"></i>
-  </div>
-  
-  {/* Image (Left side of Amount) */}
-
-  {/* Amount with color fix */}
-  <p className="font-semibold">
-    +{user.amount}
-  </p>
-  {/* <img alt="USDT icon" class=" ml-2 w-5 h-5 mr-1" height="30" width="20px" src="/assets/images/ok3d.png" /> */}
-
-</div>
-
-              {/* Remark & Date */}
-              <div className="flex flex-col justify-end items-end">
-                <p className="font-semibold">{user.remark}</p>
-                <p style={{color:"#101014"}} className="text-g300 text-sm"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  })
-) : (<div style={{
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '50vh',
-  textAlign: 'center'
-}}>
-  <img 
-    src="\assets\images\empty_state.svg" 
-    alt="empty" 
-    style={{
-      maxWidth: '100%',
-      height: 'auto',
-      marginBottom: '20px'
-    }} 
-  />
-  <p style={{ fontSize: '16px', color: '#101014' }}>No users found.</p>
-</div>
-)}
-
+               {users.length > 0 ? (
+                      users.slice(0, 5).map((user, index) => (
+                       <div key={index} style={styles.transaction}>
+                         {/* Replace with a valid image URL */}
+                         <img src={user.remark === "Deposit" ? "/assets/images/recived.png" : "/assets/images/send.png"} alt="User" style={{width:20, height:20}} />
+                         <span style={{ fontSize: 12, marginLeft: "-20%" ,color:'#000'}}>
+                             {user.remark}
+                           </span>
+                         <div>
+                           {/* <p style={styles.p}>{user.remark}</p> */}
+                           <span style={styles.p}>
+                             {parseFloat(user.amount || 0).toFixed(2)}
+                           </span>
+                         </div>
+             
+                         <span style={styles.received}>
+                           {user.status === "Active" ? "Success": "Pending"}
+                         </span>
+                       </div>
+                     ))
+                   ) : (
+                     <div style={{
+                       display: 'flex',
+                       flexDirection: 'column',
+                       justifyContent: 'center',
+                       alignItems: 'center',
+                       // height: '100vh',
+                       textAlign: 'center'
+                     }}>
+                       <img 
+                         src="/assets/images/empty_state.svg" 
+                         alt="empty" 
+                         style={{
+                           maxWidth: '100%',
+                           height: 'auto',
+                           marginBottom: '20px'
+                         }} 
+                       />
+                       <p style={{ fontSize: '16px', color: '#000' }}>No users found.</p>
+                     </div>
+                   )}
 
 
 
@@ -306,7 +446,7 @@ const styles = {
                 </Link>
               </div> */}
             </div>
-              )}
+              
             {activeTab === 'nft' && (
             <div className="tab-content " id="tabTwo_data">
               <ul className="flex justify-start items-center gap-3 overflow-y-auto">

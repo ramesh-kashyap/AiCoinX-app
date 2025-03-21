@@ -141,14 +141,14 @@ function Register() {
              height: 130dvh;
           margin: 0 auto;
           padding: 1rem;
-           background-color:  #EDE7F6
+           background-color: #fff
         }
            @media only screen and (max-width: 600px) {.container {
           max-width: 480px;
              height: 130dvh;
           margin: 0 auto;
           padding: 1rem;
-           background-color:  #EDE7F6
+           background-color:  #ffffff
         }}
         /* Header */
         .header {
@@ -166,7 +166,7 @@ function Register() {
           color: #000;
         }
         .logo-icon {
-          width: 35px;
+          width: 142px;
           height: 44px;
           fill: none;
           stroke: #000;
@@ -362,9 +362,9 @@ function Register() {
         <header className="header">
           <div className="logo">
             <div className="logo-icon" >
-            <img src="assets/images/ok3d.png" alt="ok3d"  style={{ maxWidth: "45px" }} />
+            <img src='assets/images/AiCoinX.png' ></img>
             </div>
-           AICOINX
+         
           </div>
           <Link to='/login'>
           <button className="login-btn">Login</button>

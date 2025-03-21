@@ -136,7 +136,7 @@ function VerifyEmail() {
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         body { background-color: #ffffff; color: #fff; }
-        .container { max-width: 480px; margin: 0 auto; padding: 1rem; height: 130dvh; background-color: #EDE7F6; }
+        .container { max-width: 480px; margin: 0 auto; padding: 1rem; height: 130dvh; background-color: #fff; }
         .header { display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
         .header h2 { font-size: 1.25rem; font-weight: 600; }
         .progress-section { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; }

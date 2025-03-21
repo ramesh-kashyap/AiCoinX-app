@@ -46,7 +46,7 @@ const Login = () => {
             padding: 20px;
             max-width: 100%;
             min-height: 100vh;
-              background-color: #EDE7F6;
+              background-color: #fff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           }
 
@@ -63,6 +63,7 @@ const Login = () => {
             color : #000;
             font-size: 1rem;
             font-weight: bold;
+            width:142px;
           }
 
           .logo-dot {
@@ -211,8 +212,7 @@ const Login = () => {
 
       <div className="header relative z-20 ">
         <div className="logo">
-          <img src="assets/images/ok3d.png" alt="ok3d"  style={{ maxWidth: "45px" }} />
-         AICOINX
+        <img src='assets/images/AiCoinX.png' ></img>
         </div>
         <Link to='/register'>
         <button className="sign-up-button">Sign Up</button>
