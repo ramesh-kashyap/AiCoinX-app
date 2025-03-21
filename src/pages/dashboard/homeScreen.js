@@ -49,7 +49,7 @@ const WalletDashboard = () => {
       if (response.data.status) {
         setBalance(response.data.data.
           available_balance);
-          setUserId(response.data.data.
+          setUserId(response.data.
             userId);
 
         console.log('Balance data:', response.data);
@@ -297,11 +297,11 @@ const WalletDashboard = () => {
 
         <div style={styles.actionButtons}>
           <div style={styles.actionItem}>
-            <button onClick={() => window.open(`http://localhost:4200`, '_blank')} style={styles.iconButton}><FiDownload style={{ color: "#000" }} /></button>
-            <p>Deposit</p>
+            <button onClick={() => window.open(`https://stake.aivault.world`, '_blank')} style={styles.iconButton}><FiDownload style={{ color: "#000" }} /></button>
+            <p>Add AICX</p>
           </div>
           <div style={styles.actionItem}>
-            <button onClick={() => window.open(`http://localhost:4200/stake?userId=${encryptedId}`, '_blank')}
+            <button onClick={() => window.open(`https://stake.aivault.world/stake?userId=${userId}`, '_blank')}
               style={styles.iconButton}><FiTrendingUp style={{ color: "#000" }} /></button>
             <p>Stake</p>
           </div>
@@ -312,7 +312,7 @@ const WalletDashboard = () => {
           
           
           <div style={styles.actionItem}>
-            <button  onClick={() => window.open(`http://localhost:4200/sellToken`, '_blank')} style={styles.iconButton}><FiSend style={{ color: "#000" }} /></button>
+            <button  onClick={() => window.open(`https://stake.aivault.world/sellToken`, '_blank')} style={styles.iconButton}><FiSend style={{ color: "#000" }} /></button>
             <p>Swap</p>
           </div>
         </div>
@@ -344,7 +344,7 @@ const WalletDashboard = () => {
           users.slice(0, 5).map((user, index) => (
             <div key={index} style={styles.transaction}>
               {/* Replace with a valid image URL */}
-              <img src={user.remark === "Deposit" ? "/assets/images/recived.png" : "/assets/images/send.png"} alt="User" style={{ width: 20, height: 20 }} />
+              <img src={user.remark === "Deposits" ? "/assets/images/recived.png" : "/assets/images/send.png"} alt="User" style={{ width: 20, height: 20 }} />
               <span style={{ fontSize: 12, marginLeft: "-20%" }}>
                 {user.remark}
               </span>

@@ -392,7 +392,7 @@ const styles = {
                       users.slice(0, 5).map((user, index) => (
                        <div key={index} style={styles.transaction}>
                          {/* Replace with a valid image URL */}
-                         <img src={user.remark === "Deposit" ? "/assets/images/recived.png" : "/assets/images/send.png"} alt="User" style={{width:20, height:20}} />
+                         <img src={user.remark === "Deposits" ? "/assets/images/recived.png" : "/assets/images/send.png"} alt="User" style={{width:20, height:20}} />
                          <span style={{ fontSize: 12, marginLeft: "-20%" ,color:'#000'}}>
                              {user.remark}
                            </span>
@@ -404,7 +404,7 @@ const styles = {
                          </div>
              
                          <span style={styles.received}>
-                           {user.status === "Active" ? "Success": "Pending"}
+                           {user.status === "Active" ? "Completed": "Pending"}
                          </span>
                        </div>
                      ))
