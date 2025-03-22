@@ -43,7 +43,7 @@ export default function ReferralProgram() {
 
         }
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        console.log("Error fetching user data:", error);
       }
     };
 
@@ -60,7 +60,7 @@ export default function ReferralProgram() {
                 setTotalIncome(response.data.total_income || 0); // ✅ Corrected reference
             }
         } catch (error) {
-            console.error("Error fetching user data:", error);
+            console.log("Error fetching user data:", error);
         }
     };
 
@@ -89,7 +89,7 @@ useEffect(() => {
               setTotalUser(response.data.total_user || 0); // ✅ Corrected reference
           }
       } catch (error) {
-          console.error("Error fetching user data:", error);
+          console.log("Error fetching user data:", error);
       }
   };
 

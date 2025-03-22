@@ -26,11 +26,11 @@ const Signin = () => {
       
       navigate("/home");}
       else{
-        console.error('Login failed:', response.data.error);
+        console.log('Login failed:', response.data.error);
       }
 
     } catch (error) {
-      console.error(error);
+      console.log(error);
        toast.error(error.response?.data?.error || "Something went wrong!"); 
     }
   };

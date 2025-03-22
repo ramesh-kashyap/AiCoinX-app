@@ -43,7 +43,7 @@ export default function Referral() {
 
       }
     } catch (error) {
-      console.error("❌ Error fetching users:", error);
+      console.log("❌ Error fetching users:", error);
     }
     setLoading(false);
   };

@@ -38,7 +38,7 @@ function EnterPin() {
         toast.error(response.data.error || "PIN verification failed.");
       }
     } catch (error) {
-      console.error("API Error:", error.response?.data?.error || "Unknown error");
+      console.log("API Error:", error.response?.data?.error || "Unknown error");
   
       toast.dismiss(); // Remove previous toasts
   

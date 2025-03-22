@@ -25,11 +25,11 @@ const Forget = () => {
       
       navigate("/forgetOtp");}
       else{
-        console.error('Forgot failed:', response.data.error);
+        console.log('Forgot failed:', response.data.error);
       }
 
     } catch (error) {
-      console.error(error);
+      console.log(error);
        toast.error(error.response?.data?.error || "Something went wrong!"); 
     }
   };

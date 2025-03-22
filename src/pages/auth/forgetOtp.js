@@ -34,7 +34,7 @@ function ForgetOtp() {
     console.log("Verifying PIN:", pin); // Debugging
     const email = localStorage.getItem("Email");
     if (!email) {
-        console.error("Email not found.");
+        console.log("Email not found.");
         return; // Prevent API call if email is missing
     } 
     try {
@@ -46,10 +46,10 @@ function ForgetOtp() {
       if (response.data.status) {
         navigate("/confirmPass");
       } else {
-        console.error("Login failed:", response.message);
+        console.log("Login failed:", response.message);
       }
     } catch (error) {
-      console.error("API Error:", error.response.data.error);
+      console.log("API Error:", error.response.data.error);
       toast.error(error.response?.data?.error || "Something went wrong!"); 
       setPin(""); // Clear PIN on error
     }

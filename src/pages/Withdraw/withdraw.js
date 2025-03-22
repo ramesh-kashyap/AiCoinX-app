@@ -59,11 +59,11 @@ function Withdraw() {
 
 
       } else {
-        console.error('Failed to fetch balance:', response.data);
+        console.log('Failed to fetch balance:', response.data);
       }
 
     } catch (error) {
-      console.error('Error fetching news data:', error);
+      console.log('Error fetching news data:', error);
     }
   }
   // Update wallet type and fetch corresponding wallet address (dummy data)

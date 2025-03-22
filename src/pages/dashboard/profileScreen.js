@@ -36,7 +36,7 @@ function Account() {
 
         }
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        console.log("Error fetching user data:", error);
       }
     };
     const fetchTelegramCoin = async () => {
@@ -49,7 +49,7 @@ function Account() {
          
         }
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        console.log("Error fetching user data:", error);
       }
     };
     fetchTelegramCoin();
@@ -76,7 +76,7 @@ function Account() {
         }
        
     } catch (error) {
-        console.error("Error updating profile:", error);
+        console.log("Error updating profile:", error);
         toast.error(error.response?.data?.error || "Something went wrong!"); 
 
     } 

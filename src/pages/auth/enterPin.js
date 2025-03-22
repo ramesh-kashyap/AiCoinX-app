@@ -41,10 +41,10 @@ function EnterPin() {
       if (response.data.status) {
         navigate("/home");
       } else {
-        console.error("Login failed:", response.message);
+        console.log("Login failed:", response.message);
       }
     } catch (error) {
-      console.error("API Error:", error.response.data.error);
+      console.log("API Error:", error.response.data.error);
       toast.error(error.response?.data?.error || "Something went wrong!"); 
       setPin(""); // Clear PIN on error
     }

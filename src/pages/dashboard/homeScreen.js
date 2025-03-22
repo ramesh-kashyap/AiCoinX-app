@@ -35,11 +35,11 @@ const WalletDashboard = () => {
         setUser(newsResponse.data.userData[0].fullname);
         console.log('News data:', newsResponse.data.userData[0].fullname);
       } else {
-        console.error('Failed to fetch balance:', newsResponse.data);
+        console.log('Failed to fetch balance:', newsResponse.data);
       }
 
     } catch (error) {
-      console.error('Error fetching news data:', error);
+      console.log('Error fetching news data:', error);
     }
   }
   const fetchGetBalance = async () => {
@@ -54,11 +54,11 @@ const WalletDashboard = () => {
 
         console.log('Balance data:', response.data);
       } else {
-        console.error('Failed to fetch balance:', response.data);
+        console.log('Failed to fetch balance:', response.data);
       }
 
     } catch (error) {
-      console.error('Error fetching news data:', error);
+      console.log('Error fetching news data:', error);
     }
   }
   useEffect(() => {
@@ -69,7 +69,7 @@ const WalletDashboard = () => {
         setLiveData(response.data);
         console.log('data:', response.data);
       } catch (error) {
-        console.error('Error fetching live data:', error);
+        console.log('Error fetching live data:', error);
       }
     };
     fetchGetBalance();
@@ -112,7 +112,7 @@ const WalletDashboard = () => {
       setIncome(response.data.data);
 
     } catch (err) {
-      console.err("someting wrong");
+      console.log("someting wrong");
       setError(err.response?.data?.error || "Error fetching income");
     }
   };

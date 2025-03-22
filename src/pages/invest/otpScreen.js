@@ -56,7 +56,7 @@ function Otp() {
         console.log("otp gentrate", response.data.status);
       }
     } catch (error) {
-      console.error("Error generating OTP", error.response.data.message);
+      console.log("Error generating OTP", error.response.data.message);
     }
   };
 
@@ -83,14 +83,14 @@ function Otp() {
         if (response.data.status) {
           navigate("/home");
         } else {
-          console.error("OTP verification failed:", response.data.message);
+          console.log("OTP verification failed:", response.data.message);
         }
       } else {
-        console.error("OTP verification failed:", response.data.message);
+        console.log("OTP verification failed:", response.data.message);
         setOtp(""); // Clear OTP on failure
       }
     } catch (error) {
-      console.error("API Error:", error);
+      console.log("API Error:", error);
       toast.error(error.response?.data?.message);
 
       setOtp(""); // Clear OTP on error

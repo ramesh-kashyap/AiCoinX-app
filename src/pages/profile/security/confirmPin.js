@@ -52,7 +52,7 @@ function ConfirmPin() {
                 toast.error(response.data.error || "Error updating PIN."); 
             }
         } catch (error) {
-            console.error("API Error:", error);
+            console.log("API Error:", error);
             toast.dismiss();
       toast.error(error.response?.data?.error || "Something went wrong!"); 
         }

@@ -20,6 +20,7 @@
     "crypto-js": "^4.2.0",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.475.0",
+    "phosphor-icons": "^1.4.2",
     "phosphor-react": "^1.4.1",
     "qrcode.react": "^4.2.0",
     "react": "^19.0.0",

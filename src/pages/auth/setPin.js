@@ -77,7 +77,7 @@ function SetPin() {
         alert("Error setting PIN.");
       }
     } catch (error) {
-      console.error(
+      console.log(
         "API Error:",
         error.response?.data?.error || "Unknown Error"
       );

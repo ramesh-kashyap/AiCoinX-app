@@ -29,11 +29,11 @@ const ConformPass = () => {
       toast.success(response.data.message); // Use message from backend      
       navigate("/login");}
       else{
-        console.error('ConformPass failed:', response.data.error);
+        console.log('ConformPass failed:', response.data.error);
       }
 
     } catch (error) {
-      console.error(error);
+      console.log(error);
        toast.error(error.response?.data?.error || "Something went wrong!"); 
     }
   };

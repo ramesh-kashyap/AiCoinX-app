@@ -24,7 +24,7 @@ function Profile() {
           setNewName(response.data.userData[0]);
         }
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        console.log("Error fetching user data:", error);
       }
     };
 
@@ -44,7 +44,7 @@ function Profile() {
         }
        
     } catch (error) {
-        console.error("Error updating profile:", error);
+        console.log("Error updating profile:", error);
         toast.error(error.response?.data?.error || "Something went wrong!"); 
 
     } 

@@ -101,7 +101,7 @@ function VerifyEmail() {
       const expiryTimestamp = Date.now() + countdownTime * 1000;
       localStorage.setItem("otpExpiryTimestamp", expiryTimestamp.toString());
     } catch (error) {
-      console.error("Error resending OTP:", error);
+      console.log("Error resending OTP:", error);
       toast.error("Failed to resend OTP. Please try again.");
     }
   };
@@ -124,7 +124,7 @@ function VerifyEmail() {
         toast.error("Invalid or expired OTP. Please try again.");
       }
     } catch (error) {
-      console.error("Error verifying OTP:", error.response?.data?.error || error);
+      console.log("Error verifying OTP:", error.response?.data?.error || error);
       toast.error("Error verifying OTP. Please try again.");
     }
   };
