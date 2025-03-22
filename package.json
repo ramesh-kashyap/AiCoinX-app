@@ -9,6 +9,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^6.4.6",
     "@mui/material": "^6.4.6",
+    "@phosphor-icons/react": "^2.1.7",
     "@simplewebauthn/browser": "^13.1.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

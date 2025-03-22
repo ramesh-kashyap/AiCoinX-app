@@ -50,7 +50,7 @@ function Splash() {
             href="home.html"
             className="flex justify-center items-center p-2 rounded-full bg-g300 text-n900"
           >
-            <i className="ph-bold ph-caret-left"></i>
+            <i className="fa-solid fa-arrow-left"></i>
           </a>
           <div className="flex justify-center items-center w-full">
             {/* <h1 className="font-semibold text-2xl">AICOINX</h1> */}

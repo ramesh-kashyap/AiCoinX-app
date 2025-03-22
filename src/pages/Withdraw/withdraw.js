@@ -137,7 +137,7 @@ function Withdraw() {
         {/* Header Text */}
         <div className="flex justify-start items-center gap-3 pb-8 w-full " style={{ gap: "3rem", paddingTop: '1rem' }}>
           <Link to="/account" className="flex justify-center items-center p-2 rounded-full bg-g300 text-n900">
-            <i className="ph-bold ph-caret-left"></i>
+            <i className="fa-solid fa-arrow-left"></i>
           </Link>
           <div className="flex justify-center items-center flex-col gap-2 pt-8" >
             <h1 className="text-2xl font-semibold" style={{marginLeft:'48px'}}>Withdraw</h1>

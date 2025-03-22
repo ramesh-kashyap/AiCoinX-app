@@ -106,7 +106,7 @@ export default function Referral() {
 
               class="flex justify-center items-center p-2 rounded-full bg-g300 text-n900"
             >
-              <i class="ph-bold ph-caret-left"></i>
+              <i class="fa-solid fa-arrow-left"></i>
             </Link >
             <div class="flex justify-center items-center w-full">
               <h1 class="font-semibold text-2xl">Team</h1>

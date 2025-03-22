@@ -43,7 +43,7 @@ export default function ReferralProgram() {
 
         }
       } catch (error) {
-        console.log("Error fetching user data:", error);
+        console.error("Error fetching user data:", error);
       }
     };
 
@@ -60,7 +60,7 @@ export default function ReferralProgram() {
                 setTotalIncome(response.data.total_income || 0); // ✅ Corrected reference
             }
         } catch (error) {
-            console.log("Error fetching user data:", error);
+            console.error("Error fetching user data:", error);
         }
     };
 
@@ -89,7 +89,7 @@ useEffect(() => {
               setTotalUser(response.data.total_user || 0); // ✅ Corrected reference
           }
       } catch (error) {
-          console.log("Error fetching user data:", error);
+          console.error("Error fetching user data:", error);
       }
   };
 
@@ -178,7 +178,7 @@ useEffect(() => {
         {/* Header */}
         <div className="flex justify-start items-center pb-8 mr-8">
           <Link to="/home" className="flex justify-center items-center p-2 rounded-full bg-g300 text-n900">
-            <i className="ph-bold ph-caret-left"></i>
+            <i className="fa-solid fa-arrow-left"></i>
           </Link>
           <div className="flex justify-center items-center w-full">
             <h1 style={styles.h1} className="font-semibold text-2xl">Referral Program</h1>

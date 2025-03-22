@@ -4,6 +4,7 @@ import Api from "../../service/Api";
 import Deposit from '../components/Deposit'; // Correct relative path
 
 import Footer from '../components/footer';
+
 function Profile() {
   const [users, setUsers] = useState({
     username: "",

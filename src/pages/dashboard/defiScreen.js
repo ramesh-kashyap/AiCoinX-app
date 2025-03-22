@@ -90,7 +90,7 @@ function Defi() {
         {/* Header Card */}
         <div className="bg-white bg-opacity-5 py-8 px-6 rounded-b-3xl bg-g300">
           <div className="flex justify-between items-center">
-          <NavLink to="/home"> <i className="ph-bold ph-caret-left"></i>
+          <NavLink to="/home"> <i className="fa-solid fa-arrow-left"></i>
 
           </NavLink>
 

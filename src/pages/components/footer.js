@@ -15,11 +15,11 @@ function Footer() {
       
       <div className="container relative bg-white bg-opacity-9 py-5 flex justify-around items-center after:absolute after:bg-n700 after:inset-0">
         <div className="absolute left-[41%] bottom-[72px] z-40"   style={{
-                  bottom:'48px',
+                  bottom:'38px',
                   left:'45%',
                 }}>
         <button onClick={() => setIsOpen(true)} className="bg-g300 text-2xl p-3.5 rounded-full flex justify-center items-center relative text-white">
-            <i className="ph ph-arrows-counter-clockwise"></i>
+        <i class="fa-solid fa-rotate"></i>
             <div className="absolute -bottom-2 -left-5 -right-5 -z-10">
               {/* <img src="/assets/images/reload-bg.png" alt="Reload" /> */}
             </div>

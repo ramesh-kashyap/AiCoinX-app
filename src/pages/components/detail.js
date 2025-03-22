@@ -38,7 +38,7 @@ const DetailPage = () => {
                 backgroundColor:"#9583ff",
               }}
             >
-              <i className="ph-bold ph-caret-left"></i>
+              <i className="fa-solid fa-arrow-left"></i>
             </NavLink>
 
             {/* Page Title (on the same line as the back icon) */}

@@ -12,7 +12,7 @@ function SeedPhrase() {
             to="/import-seed" // Update this route as needed
             className="flex justify-center items-center p-2 rounded-full bg-g300 text-n900"
           >
-            <i className="ph-bold ph-caret-left"></i>
+            <i className="fa-solid fa-arrow-left"></i>
           </Link>
           <div className="flex justify-start items-center">
             <div className="size-2 rounded-full bg-g300"></div>

@@ -12,7 +12,7 @@ function Marketplace() {
         {/* Header Card */}
         <div className="bg-white bg-opacity-5 py-8 px-6 rounded-b-3xl bg-g300">
           <div className="flex justify-between items-center">
-          <i className="ph-bold ph-caret-left"></i>
+          <i className="fa-solid fa-arrow-left"></i>
 
           <div class="flex justify-center items-center w-full"><h1 class="font-semibold text-2xl">Assets</h1></div>
           </div>

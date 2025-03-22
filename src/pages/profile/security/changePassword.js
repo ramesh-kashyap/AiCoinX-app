@@ -69,7 +69,7 @@ function EnterPin() {
          <div style={{marginRight:"20rem"}}  className="flex justify-start items-center pb-8 mr-8">
           
                   <Link to="/account" className="flex justify-center items-center p-2 rounded-full bg-g300 text-n900">
-                                    <i className="ph-bold ph-caret-left"></i>
+                                    <i className="fa-solid fa-arrow-left"></i>
                                   </Link>
                  
                 </div></div>

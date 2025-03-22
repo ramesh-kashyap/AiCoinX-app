@@ -74,7 +74,7 @@ const BottomSheet = ({ isOpen, onClose }) => {
        
           <div style={styles.icon} >
           {/* <div className="flex justify-center items-center p-4 text-xl bg-white bg-opacity-5 rounded-full text-g300"> */}
-                <i className="ph-fill ph-swap"></i>
+                <i className="fa-solid fa-arrows"></i>
                 {/* <img src="../assets/images/swap.png" alt="swap" style={{width:25, height:"auto"}}/> */}
                 {/* </div> */}
             {/* <i className="fas fa-exchange-alt mr-2"></i>  */}
@@ -92,7 +92,7 @@ const BottomSheet = ({ isOpen, onClose }) => {
         <Link to="/withdraw" style={styles.option}>
         <div style={styles.icon} >
           {/* <i className="fas fa-arrow-down mr-2"></i> */}
-          <i className="ph-fill ph-currency-dollar"></i>
+          <i className="fa-solid fa-credit-card" style={{fontSize:'medium'}}></i>
            </div>
           <div>
             <strong style={{color:"#101014"}}>Withdraw</strong>
@@ -106,7 +106,7 @@ const BottomSheet = ({ isOpen, onClose }) => {
         <Link onClick={() => window.open(`https://stake.aivault.world`, '_blank')} style={styles.option}>
         <div style={styles.icon} >
           {/* <i className="fas fa-layer-group mr-2"></i> */}
-          <i className="ph-fill ph-wallet"></i> 
+          <i className="fa-solid fa-boxes-stacked" style={{fontSize:'medium'}}></i>
           </div>
           <div>
             <strong style={{color:"#101014"}}>Deposit</strong>
